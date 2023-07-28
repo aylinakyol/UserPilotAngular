@@ -1,0 +1,46 @@
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    
+    </style>
+    </head>
+    <body>
+    
+    <h2>Login Form</h2>
+    
+    <form action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <img src="https://www.atasehirrehberi.com.tr/uploads/gorseller/kurum-yoneticileri/people.png" alt="Avatar" class="avatar">
+      </div>
+    
+      <div class="container">
+       <form [formGroup]="profileForm">
+        <label for="name"><b>E-mail</b> </label>
+        <input id="name" type="text" formControlName="eposta">
+    
+        <label for="psw"><b>Password</b></label>
+        <input id="password" type="password" formControlName="sifre">
+       </form>
+            
+    
+        <button class="Sign in"
+        (click)="login()"
+            type="button">
+            Sign in
+        </button>
+        
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+    
+      <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a [routerLink]="['/auth/password']">password?</a></span>
+      </div>
+    </form>
+    
+    </body>
+    
+    

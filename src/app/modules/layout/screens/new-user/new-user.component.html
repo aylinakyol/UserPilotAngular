@@ -1,0 +1,56 @@
+   
+<div>
+  <form >
+    <button style="background-color:cadetblue;" class="Submit" 
+    (click)="navigeteTo('/app/kullanicilar')"
+        type="button">
+        Back to users
+    </button>
+    <p></p>
+    <form [formGroup]="profileForm">
+    
+      <h3>New User</h3> 
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" formControlName="Adi" placeholder="Your name..">
+  
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" formControlName="Soyadi"  placeholder="Your last name..">
+  
+
+    
+    <label for="eposta">E posta</label>
+    <input type="text" id="eposta" name="eposta" formControlName="Eposta" placeholder="Your e mail..">
+  
+  <div class="col">
+    <label for="şifre">Şifre</label>
+    <input type="password" id="şifre" name="şifre" formControlName="SifreAcik" placeholder="Your password..">
+  </div>
+
+    <label for="phonenumber">Phone Number</label>
+    <input type="text" id="phonenumber" name="phonenumber" formControlName="CepTelefon" placeholder="Your phone number..">
+  
+    
+    <label for="sicilNo">Sicil No</label>
+    <p></p>
+    <input type="int" id="sicilNo" name="sicilNo" formControlName="SicilNo" placeholder="Sicil no..">
+
+
+    <div class="col">
+    <label for="adres">Adres</label>
+    <input type="text" id="adres" name="adres" formControlName="Adres" placeholder="Your address..">
+  </div>
+
+
+    
+  
+      <button 
+      (click)="getValue()"
+          type="button">
+          Submit
+      </button>
+    
+    </form>
+  
+
+

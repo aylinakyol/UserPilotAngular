@@ -1,0 +1,68 @@
+
+
+
+<div>
+  <form>
+    <div >
+    <form [formGroup]="searchForm">
+      <h3>Arama Kriterleri</h3>
+  
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" formControlName="Adi" placeholder="Your name..">
+
+    <label for="lname">&nbsp;&nbsp;Last Name</label>
+    <input type="text" id="lname" name="lastname" formControlName="Soyadi" placeholder="Your last name..">
+
+    <label for="eposta">&nbsp;&nbsp;E posta</label>
+    <input type="text" id="eposta" name="eposta" formControlName="Eposta" placeholder="Your e mail..">
+
+   
+    <br>
+    <button class="Submit" 
+    (click)="SearchData()"
+        type="button">
+        Ara   
+    </button>
+    &nbsp;&nbsp;  
+    <button style="background-color: burlywood;" class="Submit" 
+    (click)="navigate('/app/user')"
+        type="button">
+        New user
+    </button>
+
+    <table class="center">
+      <thead>
+        <tr>
+          <th scope="col">Adı Soyadı</th>
+          <th scope="col">Kullanıcı Tipi</th>
+          <th scope="col">Eposta</th>
+          <th scope="col">Ceptelefon</th>
+          <th scope="col">Durum</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor= "let item of userList" >
+          <td>{{ item.AdSoyad }}</td>
+          <td>{{item.KullaniciTipiAdi}}</td>
+          <td>{{ item.Eposta}}</td>
+          <td>{{ item.CepTelefon }}</td>
+          <td>{{ item.KullaniciDurumAdi }}</td>  &nbsp; &nbsp;&nbsp;  <button style="background-color:red" (click)="Remove(item)"> X </button>
+          &nbsp;
+          <a routerLink="/app/update/{{item.KullaniciId}}"><button style="background-color:green" (click)="Update(item)"> ~ </button></a>
+        </tr>
+      </tbody>
+    </table>  
+    <div>
+      <mat-paginator style="background-color: #f2f2f2 ;" [length]="100"
+      (page)="onPageChange($event)"
+      [pageIndex]="page"
+              [pageSize]="tableSize"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              showFirstLastButtons
+              aria-label="Select page">
+      </mat-paginator>
+    </div>
+    
+    </form>
+    </div>
+  

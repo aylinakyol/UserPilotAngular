@@ -1,0 +1,33 @@
+
+<label class="hoverable" for="fileInput">
+  <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+  <div class="hover-text">Choose file</div>
+</label>
+<br/>
+<input id="fileInput" type='file' (change)="onSelectFile($event)">
+      <div class="container">
+      <form [formGroup]="profileForm">
+    
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname"  formControlName="Adi"  placeholder="Your name..">
+  
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" formControlName="Soyadi" placeholder="Your last name..">
+  
+      <label for="eposta">E posta</label>
+      <input type="text" id="eposta" name="eposta" formControlName="Eposta" placeholder="Your e mail..">
+  
+      <label for="phonenumber">Phone Number</label>
+      <input type="text" id="phonenumber" name="phonenumber" formControlName="CepTelefon" placeholder="Your phone number..">
+
+      
+    
+        <button class="Submit" 
+        (click)="updateUser()"
+            type="button">
+            Submit
+        </button>
+      
+      </form>
+   
+  </div>
